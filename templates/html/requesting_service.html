@@ -1,0 +1,111 @@
+{% extends 'html/base.html' %}
+{% block title %}Requesting service{% endblock %}
+{% block content %}
+<head>
+	<style>
+		body
+		{
+			user-select: none;
+		}
+		.btn-outline-danger,.btn-outline-success{
+			transition: 2s ease;
+		}
+	</style>
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Static Example</title>
+  <style>body {font-family: Arial, sans-serif;}</style>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+  <!-- Fengyuan Chen's Datepicker -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/datepicker/0.6.5/datepicker.min.css" integrity="sha256-b88RdwbRJEzRx95nCuuva+hO5ExvXXnpX+78h8DjyOE=" crossorigin="anonymous" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/datepicker/0.6.5/datepicker.min.js" integrity="sha256-/7FLTdzP6CfC1VBAj/rsp3Rinuuu9leMRGd354hvk0k=" crossorigin="anonymous"></script>
+   <script>
+    $(function () {
+      $("#datepicker").datepicker();
+    });
+  </script>
+</head>
+
+</head>
+<div class="container-fluid mt-4">
+	<div class="row mx-2">
+		<div class="card col-md-3 shadow-lg mx-2 h-100" data-aos="fade-up">
+			<div class="card-body">
+				<h4>Request For a Service</h4>
+				<form method="post">
+					{% csrf_token %}
+				
+<br><br>
+
+					<label for="Service">Select Service Required</label><br>
+						{{w.role_type}}<br><br>
+					<label for="tmobile">Contact No</label><br>
+						{{w.tmobile}}<br><br>
+					<label for="date">Date Of Appointement</label><br>
+						{{w.date}}<br><br>
+						<script>	
+							AOS.init({duration:1300});
+
+    $(function () {
+        $(".datepicker").datepicker();
+    });
+</script>
+					  
+
+ 
+
+					<div class="row">
+						<div class="col">
+							<input type="reset" value="Clear" class="form-control btn btn-outline-danger">
+						</div>
+						<div class="col">
+							<input type="submit" value="submit" class="form-control btn btn-outline-success">
+						</div><br>
+						<br>
+						<div>
+    {% for message in messages %}
+    <h2> {{message}}</h2>
+    {% endfor %}
+  </div>
+					</div>
+				</form>
+			</div>
+		</div>
+		<div class="card col-md shadow-lg h-100" data-aos="flip-left">
+			<div class="card-body">
+				<h4>List of Requests</h4>
+				<table class="table">
+					<tr>
+						<th>Service Name</th>
+						<th>Date</th>
+						<th>Status</th>
+					</tr>
+					{% for j in s %}
+					<tr>
+						<td>
+							{% if j.role_type == '0' %}
+							<p >Carpenter</p>
+							{% elif j.role_type == '1' %}
+							<p >Plumber</p>
+							{% else %}
+							<p >Electrician</p>
+							{% endif %}
+						</td>
+
+						<td>{{j.date}}</td>
+						<td>{{j.status}}</td>
+					
+					</tr>
+					{% endfor %}
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}

@@ -1,0 +1,122 @@
+{% extends 'html/base.html' %}
+{% load static %}
+{% block title %}About Us{% endblock %}
+
+{% block content %}
+<style type="text/css">
+	body{
+	margin: 0;
+	padding: 0;
+}
+.container{
+	width:100%;
+	height:auto;
+	display: flex;
+	align-items: flex-start;
+	flex-wrap: wrap;
+}
+h3{
+	font-style:strong;
+}
+.about{
+	width:100%;
+	height: 600px;
+	background-image: url(https://i.ibb.co/9bZPZgp/dsc4641-copy-880074f1fd6d9422f6c3fded126a54c8.jpg); /*Couldn't link the image so i used linear-gradient background LOL!*/
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+.text{
+	font-size: 30px;
+	color:#fff;
+	font-family: sans-serif;
+	text-shadow: 0px 15px 12px #000;
+}
+.line{
+	width:200px;
+	height: 8px;
+	background-color: #17ff8d;
+	display: block;
+	position: relative;
+	border-radius: 5px;
+	left:10%;
+	box-shadow: 0px 15px 12px 0px #000;
+}
+.content{
+	width:100%;
+	height:auto;
+	background-color: #ebedfa;
+	font-size: 23px;
+	font-family: audiowide;
+	color:#333;
+	line-height: 30px;
+	text-align: center;
+}
+
+footer{
+	width:100%;
+	height: auto;
+	background-color: #333;
+	color: #17ff8d;
+	font-size: 23px;
+	text-align: center;
+	line-height: 50px;
+}
+</style>
+
+
+<br>
+<br>																
+	<div class="container">
+		<div class="about">
+			<div class="text">
+				<h1>&nbsp;About Us</h1>
+				<div class="line"></div>
+			</div>
+		</div>
+
+		<div class="content">
+			<br><br>
+			<p>Welcome to Home Services, your one-stop destination for seamless apartment management! We are dedicated to simplifying the process of managing and accessing services within single apartments. Our platform is designed to empower apartment owners and tenants alike, fostering a collaborative community within your apartment complex.
+
+Our Mission
+
+At Home Services, our mission is to create a convenient and efficient ecosystem for apartment living. We aim to bridge the gap between apartment owners, service providers, and tenants, making apartment management a breeze for everyone involved.</p><br><br>
+
+<h3>Who We Are</h3><br>
+
+<p>We are a team of dedicated individuals who are passionate about improving the apartment living experience. We understand the challenges that both apartment owners and tenants face, and we are committed to providing innovative solutions to address these issues.</p><br><br>
+
+<h3>What We Offer</h3><br>
+<p>
+Our platform offers apartment owners the opportunity to take control of their property management. As an apartment owner, you become the admin of your apartment's dedicated website, allowing you to easily oversee and enhance the living experience for your tenants.</p><br><br>
+
+
+<h3>Convenient Service Requests:</h3><br>
+<p>
+ Submit service requests effortlessly through our platform, ensuring your apartment is well-maintained.
+Transparent Communication: Stay informed about the progress of your service requests and communicate with your apartment owner and service providers.
+Community Engagement: Connect with fellow tenants, fostering a sense of community within your apartment complex.</p><br><br>
+
+<h3>For Service Providers:</h3><br>
+<p>
+
+Opportunity for Growth: Register as a service provider and gain access to a network of potential clients within apartment complexes.
+Efficient Assignment: Receive service requests from apartment owners and efficiently manage your workload.
+Enhanced Reputation: Build a strong reputation within the apartment community by providing high-quality services.
+Why Choose Us?
+
+At Home Services, we stand out because we focus on empowering apartment owners, tenants, and service providers through a user-friendly and secure platform. Our commitment to transparency, efficiency, and community building sets us apart from the rest.
+
+Join us in revolutionizing apartment living. Whether you're an apartment owner looking to streamline management, a tenant seeking convenient services, or a service provider looking for opportunities, we have you covered. Together, we can create a better apartment living experience for everyone involved.
+
+Join Home Services today and discover the future of apartment management!</p>
+		</div>
+		</div>
+		<footer>Copyright &copy; U Can Code 2019 Home|About us|Services|Contact Us</footer>
+
+ {% endblock %}
